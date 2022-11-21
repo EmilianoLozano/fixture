@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <div class="row" >
+         <h4>Participantes</h4>
+         <div class="col-12 col-md-4 mb-2">
+           <select class="form-control" style="cursor: pointer;" [(ngModel)]="participante" id="">
+             <option value="">Seleccione participante</option>
+             <option value="panchin">PANCHIN</option>
+             <option value="lozin">LOZIN</option>
+             <option value="traidorcin">TRAIDORCIN</option>
+             <option value="aleterin">ALETERIN</option>
+             <option value="mari">MARI</option>
+           </select>
+         </div>
+         <div  class="col-12 col-md-4 ">
+           <button class="btn btn-primary" (click)="enviarResultados()">Descargar Resultados</button>
+         </div>
+       </div>
+       <div class="row mt-4" id="htmlData">
+           <div class="card justify-content-center w-50 text-center">
+     
+             <table class="table" >
+               <thead>
+                 <th  class="text-center  border-bottom">Resultados</th>
+               </thead>
+               <tbody>
+                 <tr *ngFor="let par of partidos" >
+                   <div class="d-flex justify-content-between">
+                     <div>
+                     <img class="m-1" [src]="par.img1" width="20" height="20" alt="">{{par.equipo1}}
+                     </div>
+                     <div class="w-25">
+                     <input  class="form-control "  type="text">
+                     </div>
+                     <div class="w-25">
+                     <input  class="form-control " type="text">
+                     </div>
+                     <div>
+                     <img class="m-1"  [src]="par.img2" width="20" height="20"  alt="">{{par.equipo2}}
+                     </div>
+                   </div>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+       </div>
+   
+   
+   </div>

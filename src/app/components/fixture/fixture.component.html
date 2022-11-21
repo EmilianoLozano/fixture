@@ -1,0 +1,52 @@
+
+
+<div class="container mt-4" >
+    <div class="text-center">
+      <h3>Prode de los pibes</h3>
+    </div>
+    <div class="row" >
+      <h4>Participantes</h4>
+      <div class="col-12 col-md-4 mb-2">
+        <select class="form-control" style="cursor: pointer;" [(ngModel)]="participante" id="">
+          <option value="">Seleccione participante</option>
+          <option value="panchin">PANCHIN</option>
+          <option value="lozin">LOZIN</option>
+          <option value="traidorcin">TRAIDORCIN</option>
+          <option value="aleterin">ALETERIN</option>
+          <option value="mari">MARI</option>
+        </select>
+      </div>
+      <div  class="col-12 col-md-4 ">
+        <button class="btn btn-primary" (click)="enviarResultados()">Descargar Resultados</button>
+      </div>
+    </div>
+
+    <div class="row mt-4" id="htmlData">
+        <div class="col-6 col-lg-4 col-md-6 col-xl-3 card" *ngFor="let fix of fixture" >
+          Grupo {{fix.Grupo}}
+          <table class="table" >
+            <thead>
+              <th  class="text-center">Resultados</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let par of fix.Partidos">
+                <div class="d-flex justify-content-between">
+                  <div>
+                  <img class="m-1" [src]="par.imagen1" alt="">{{par.Equipo1}}
+                  </div>
+                  <div class="w-25">
+                  <input  class="form-control "  type="text">{{par.Res1}}
+                  </div>
+                  <div class="w-25">
+                  <input  class="form-control " type="text">{{par.Res2}}
+                  </div>
+                  <div>
+                  <img class="m-1" [src]="par.imagen2" alt="">{{par.Equipo2}}
+                  </div>
+                </div>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>

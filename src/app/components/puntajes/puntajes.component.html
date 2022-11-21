@@ -1,0 +1,69 @@
+
+<div class="container" >
+
+       <div class="row mt-4">
+           <div class="card col-12 justify-content-center w-50 text-center">
+     
+             <table class="table" >
+               <thead>
+                 <th colspan="2" class="text-center border-bottom" >Puntajes</th>
+               </thead>
+               <tbody>
+                 <tr *ngFor="let puntaje of puntajes" >
+                   <div class="d-flex justify-content-between">
+                    <td>{{puntaje.nombre}} </td>
+                    <td>{{puntaje.puntos}}</td>
+                   </div>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+      
+       </div>
+  
+       <div class="row mt-4">
+          <div class="card">
+            <h4 class="text-center">Reglas</h4>
+            
+              <li>Puntos por acertar pronóstico (Gana,Empata,Pierde) : 1pt</li>
+              <li>Puntos por acertar pronóstico + resultado : 3pt</li>
+              <li><b> Antes que comienze el mundial</b></li>
+              <ul>Puntos por acertar los 2 máximos goleadores : 5 pt cada uno</ul>
+              <ul>Puntos por acertar los 2 jugadores con mas asistencias : 5 pt cada uno</ul>
+              <ul>Puntos por acertar los 1er 2do y 3er puesto  : 10 pt cada uno</ul>
+              <li><b> Semis y Final:</b>
+                <ul>
+                  Acertar quien hace los goles en semifinales y final: 5 pt cada acierto
+                </ul>
+              </li>
+            
+          </div>
+       </div>
+
+       <div class="row mt-4 mb-4">
+            <div class="col-2">
+              Aletero
+              <input type="text" [(ngModel)]="aletero" class="form-control">
+            </div>
+            <div class="col-2">
+              Lozin
+              <input type="text" [(ngModel)]="lozin" class="form-control">
+            </div>
+            <div class="col-2">
+              Panchin
+              <input type="text" [(ngModel)]="panchin" class="form-control">
+            </div>
+            <div class="col-2">
+              Traidorcin
+              <input type="text" [(ngModel)]="traidorcin" class="form-control">
+            </div>
+            <div class="col-2">
+              Mari
+              <input type="text" [(ngModel)]="mari" class="form-control">
+            </div>
+            <div class="col-2">
+              Actualizar Puntajes 
+              <button class="btn btn-success w-100" (click)="actualizar()">Guardar</button>
+            </div>
+       </div>
+   </div>
